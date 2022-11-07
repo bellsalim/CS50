@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="css.css" >
+	<title> Carrinho</title>
+</head>
+<body class="fundodig">
+<meta charset="UTF-8">
+<header>O total do seu carrinho é:</header>
+<div class="botãodiv">
+
+		<div class="divvend2">
+			<div class="divvend3">
+<script>
+ var total = 0; 
+ var i = 0;     
+ var valor = 0; 
+ 
+ for(i=1; i<=99; i++) 
+ {
+
+	 var prod = localStorage.getItem("n" + i + ""); //  
+	 if(prod != null) 
+	 {	
+
+		 
+		 valor = parseFloat(localStorage.getItem("valor" + i)); 
+		 total = (total + valor); 
+	 }
+ }
+		var dinheiro = total.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+		
+		document.write("<br>O total a ser pago é:");
+		document.write(dinheiro); 
+</script>
+</div>
+</div>
+<br>
+
+<div class="divvend2">
+<form> <button  class="botãocompra"type="button" onclick=" localStorage.clear(); location.reload();"> Limpar carrinho </button>
+	<a href="pagamento.html" class="botãocompra">Comprar</a>
+</form>
+</div>
+</div>
+</body>
+</html>
